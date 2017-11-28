@@ -1,0 +1,22 @@
+version: "2.1"
+services:
+  postgres:
+      build: ./db
+      environment:
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_USER=postgres 
+      - POSTGRES_DB=test
+
+  web:
+    build: ./orm
+    volumes:
+      - "./orm/app:/src/app"
+    ports:
+      - "4000:4000"
+    depends_on:
+      - postgres
+    links:
+      - postgres
+    command: ["npm", "start"]
+
+
