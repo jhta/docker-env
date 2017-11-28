@@ -1,7 +1,7 @@
 FROM node
 
 WORKDIR /src
-COPY ./app /src/
+COPY ./app/* /src/
 
 ADD app/package.json /src/package.json
 
