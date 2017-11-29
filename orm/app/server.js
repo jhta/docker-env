@@ -1,30 +1,21 @@
-const http = require('http');
-const Sequelize = require('sequelize');
-const configDB = {
-  host: 'localhost',
-  dialect: 'postgres',
-  port: '5432',
-  database: 'test'
-};
+const http = require('http')
+const Sequelize = require('sequelize')
 
 const server = http.createServer((req, res) => {
-  const sequelize = new Sequelize('postgresql://postgres:123456@postgres:5432/test');
+  const sequelize = new Sequelize('postgresql://postgres:123456@postgres:5432/test')
   sequelize
     .authenticate()
     .then(() => {
-      console.log('connection has been established successfully');
+      console.log('connection has been established successfully')
     })
     .catch((err) => {
-      console.log('paila pana', err.message);
-    });
+      console.log('paila pana', err.message)
+    })
 
-  res.write('Hello world...');
-  res.end();
-
-});
+  res.write('Hello world...')
+  res.end()
+})
 
 server.listen(4000, () => {
-  console.log("server listen for port 4000 :3");
-});
-
-
+  console.log('Server listen for port 4000')
+})
