@@ -3,12 +3,13 @@
 const debug = require('debug')('orm:setup')
 const db = require('./index')
 const chalk = require('chalk')
+const dbConfig = require('./config')
 
 async function setup () {
   const config = {
-    database: 'test',
-    username: 'postgres',
-    password: '123456',
+    database: dbConfig.database || 'test',
+    username: dbConfig.username || 'postgres',
+    password: dbConfig.password || '123456',
     host: 'postgres',
     dialect: 'postgres',
     logging: (e) => debug(e),

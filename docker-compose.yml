@@ -17,6 +17,6 @@ services:
       - postgres
     links:
       - postgres
-    command: ["npm", "run", "setup"]
+    command: ["npm", "run", "setup", "-y"]
 
 
