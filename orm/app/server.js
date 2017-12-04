@@ -1,7 +1,7 @@
-const http = require('http')
+/* const http = require('http')
 const Sequelize = require('sequelize')
 
-  /*const server = http.createServer((req, res) => {
+const server = http.createServer((req, res) => {
   const sequelize = new Sequelize('postgresql://postgres:123456@postgres:5432/test')
   sequelize
     .authenticate()
@@ -18,4 +18,4 @@ const Sequelize = require('sequelize')
 
 server.listen(4000, () => {
   console.log('Server listen for port 4000')
-})*/
+}) */
