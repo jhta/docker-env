@@ -7,6 +7,8 @@
     "test": "standard && DEBUG=orm:* ava tests/ --verbose",
     "start": "node setup",
     "lint": "standard && exit 1",
+    "coverage": "nyc --reporter=lcov ava tests/ --verbose",
+    "coverage-term": "nyc ava tests/ --verbose",
     "setup": "DEBUG=orm:* node setup"
   },
   "keywords": [],
@@ -28,6 +30,7 @@
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
+    "nyc": "^11.3.0",
     "sqlite3": "^3.1.13",
     "standard": "^10.0.3"
   }
