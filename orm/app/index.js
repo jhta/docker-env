@@ -1,6 +1,7 @@
 'use strict'
 
 const setupDatabase = require('./lib/db')
+const setupAgent = require('./lib/agent')
 const setupAgentModel = require('./models/agent')
 const setupMetricModel = require('./models/metric')
 const defaults = require('defaults')
@@ -31,7 +32,7 @@ module.exports = async function (config) {
     await sequelize.sync({ force: true })
   }
 
-  const Agent = {}
+  const Agent = setupAgent(AgentModel)
   const Model = {}
 
   return {
